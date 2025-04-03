@@ -4,6 +4,7 @@ import { ProfileScreen } from '../screens/profile/ProfileScreen';
 import { StackNavigator } from './StackNavigator';
 import { globalColors } from '../theme/theme';
 import { useWindowDimensions, View } from 'react-native';
+import { BottomTabNavigator } from './BottomTabsNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -19,7 +20,7 @@ export const SideMenuNavigator = () => {
 
             screenOptions={{
 
-                drawerType: (dimenstions.width >= 758) ?'permanent': 'slide',
+                drawerType: (dimenstions.width >= 758) ? 'permanent' : 'slide',
 
                 headerShown: false,
                 //drawerType: 'slide',
@@ -29,12 +30,13 @@ export const SideMenuNavigator = () => {
                     borderRadius: 100,
                     paddingHorizontal: 20
                 },
-                drawerStyle:{
+                drawerStyle: {
                     width: 275
                 }
             }}
         >
-            <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+            {/*  <Drawer.Screen name="StackNavigator" component={StackNavigator} /> */}
+            <Drawer.Screen name="Tabs" component={BottomTabNavigator} />
             <Drawer.Screen name="Profile" component={ProfileScreen} />
         </Drawer.Navigator>
     );
@@ -49,9 +51,9 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
                 backgroundColor: globalColors.primary,
                 margin: 30,
                 borderRadius: 50,
-            }}/>
+            }} />
 
-            <DrawerItemList { ...props} />
+            <DrawerItemList {...props} />
         </DrawerContentScrollView>
     )
 }

@@ -1,19 +1,14 @@
-import { DrawerActions, useNavigation } from '@react-navigation/native';
-import React, { useEffect } from 'react';
-import { Text, StyleSheet, Pressable } from 'react-native';
-import { View, TouchableOpacity } from 'react-native';
+import React from 'react'
+import { StyleSheet, View } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native-gesture-handler'
 import { HamburgerMenu } from '../../components/shared/HamburgerMenu';
 
-export const Tab1Screen = () => {
-
-
-
-
+export const Tab3Screen = () => {
     return (
-
         <View style={styles.container}>
             <HamburgerMenu />
-            <Text style={styles.title}>Welcome to Tab 1</Text>
+
+            <Text style={styles.title}>Welcome to Tab 3</Text>
             <Text style={styles.subtitle}>This is a more engaging view!</Text>
             <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText}>Click Me</Text>
@@ -27,7 +22,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        //backgroundColor: '#f0f8ff',
+        // backgroundColor: '#f0f8ff',
     },
     title: {
         fontSize: 24,

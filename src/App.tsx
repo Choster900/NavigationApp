@@ -4,14 +4,20 @@ import { Text } from 'react-native';
 import 'react-native-gesture-handler';
 import { StackNavigator } from './presentation/routes/StackNavigator';
 import { SideMenuNavigator } from './presentation/routes/SideMenuNavigator';
+import { BottomTabNavigator } from './presentation/routes/BottomTabsNavigator';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export const App = () => {
     return (
-        <NavigationContainer>
+        <GestureHandlerRootView style={{ flex: 1 }}>
 
-            {/* <StackNavigator /> */}
-            <SideMenuNavigator />
-        </NavigationContainer>
+            <NavigationContainer>
+
+                {/* <StackNavigator /> */}
+                <SideMenuNavigator />
+                {/* <BottomTabNavigator /> */}
+            </NavigationContainer>
+        </GestureHandlerRootView>
     )
 }
 

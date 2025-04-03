@@ -5,27 +5,16 @@ import { DrawerActions, NavigationProp, useNavigation } from '@react-navigation/
 import { PrimaryButton } from '../../components/shared/PrimaryButton';
 import { RootStackParams } from '../../routes/StackNavigator';
 import { Text } from 'react-native-gesture-handler';
+import { HamburgerMenu } from '../../components/shared/HamburgerMenu';
 
 export const HomeScreen = () => {
 
     const navigation = useNavigation<NavigationProp<RootStackParams>>()
 
-    useEffect(() => {
-
-        navigation.setOptions({
-            headerLeft: () => (
-                <Pressable onPress={ () => navigation.dispatch( DrawerActions.toggleDrawer )}>
-                    <Text>Menu</Text>
-                </Pressable>
-            )
-        })
-
-
-    }, [])
-
-
     return (
         <View style={globalStyles.container}>
+
+            <HamburgerMenu />
 
             <PrimaryButton label='Productos' onPress={() => navigation.navigate('Products')} />
 
